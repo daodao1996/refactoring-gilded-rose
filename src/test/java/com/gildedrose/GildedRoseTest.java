@@ -17,4 +17,23 @@ public class GildedRoseTest {
         assertThat(app.items[0].sell_in, is(0));
     }
 
+    @Test
+    public void should_sell_in_minus_1_when_all_method_updateSellIn() {
+        Item[] items = new Item[] {
+                new Item("+5 Dexterity Vest", 10, 20),
+                new Item("Aged Brie", 2, 0),
+                new Item("Elixir of the Mongoose", 5, 7),
+                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                new Item("Conjured Mana Cake", 3, 6) };
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.update_sellIn();
+        assertThat(gildedRose.items[0].sell_in, is(9));
+        assertThat(gildedRose.items[1].sell_in, is(1));
+        assertThat(gildedRose.items[2].sell_in, is(4));
+        assertThat(gildedRose.items[3].sell_in, is(-1));
+        assertThat(gildedRose.items[4].sell_in, is(4));
+        assertThat(gildedRose.items[5].sell_in, is(2));
+    }
+
 }

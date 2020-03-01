@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 class GildedRose {
     Item[] items;
 
@@ -36,10 +39,6 @@ class GildedRose {
                 }
             }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sell_in = items[i].sell_in - 1;
-            }
-
             if (items[i].sell_in < 0) {
                 if (!items[i].name.equals("Aged Brie")) {
                     if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -58,5 +57,14 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    public void update_sellIn(){
+        Stream<Item> itemsStream = Arrays.stream(items);
+        itemsStream.forEach(item -> {
+            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                item.sell_in = item.sell_in - 1;
+            }
+        });
     }
 }
