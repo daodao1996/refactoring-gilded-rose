@@ -45,6 +45,7 @@ public class GildedRoseTest {
                 new Item("Aged Brie", -1, 30),
                 new Item("Aged Brie", -1, 60),
                 new Item("Aged Brie", -1, -2),
+                new Item("Aged Brie", 2, -2),
         };
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.update_quality();
@@ -54,6 +55,7 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[2].quality, is(32));
         assertThat(gildedRose.items[3].quality, is(60));
         assertThat(gildedRose.items[4].quality, is(0));
+        assertThat(gildedRose.items[5].quality, is(-1));
     }
 
     @Test
@@ -62,7 +64,8 @@ public class GildedRoseTest {
                 new Item("+5 Dexterity Vest", 10, 20),
                 new Item("+5 Dexterity Vest", -2, 20),
                 new Item("+5 Dexterity Vest", -2, 60),
-                new Item("+5 Dexterity Vest", -2, -1)
+                new Item("+5 Dexterity Vest", -2, -1),
+                new Item("+5 Dexterity Vest", 10, -1)
         };
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.update_quality();
@@ -71,6 +74,7 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[1].quality, is(18));
         assertThat(gildedRose.items[2].quality, is(58));
         assertThat(gildedRose.items[3].quality, is(-1));
+        assertThat(gildedRose.items[4].quality, is(-1));
     }
 
     @Test
@@ -79,7 +83,8 @@ public class GildedRoseTest {
                 new Item("Elixir of the Mongoose", 10, 20),
                 new Item("Elixir of the Mongoose", -2, 20),
                 new Item("Elixir of the Mongoose", -2, 60),
-                new Item("Elixir of the Mongoose", -2, -1)
+                new Item("Elixir of the Mongoose", -2, -1),
+                new Item("Elixir of the Mongoose", 10, -1)
         };
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.update_quality();
@@ -88,6 +93,7 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[1].quality, is(18));
         assertThat(gildedRose.items[2].quality, is(58));
         assertThat(gildedRose.items[3].quality, is(-1));
+        assertThat(gildedRose.items[4].quality, is(-1));
     }
 
     @Test
@@ -99,6 +105,7 @@ public class GildedRoseTest {
                 new Item("Sulfuras, Hand of Ragnaros", -2, -1),
                 new Item("Sulfuras, Hand of Ragnaros", 0, 80),
                 new Item("Sulfuras, Hand of Ragnaros", -1, 80),
+                new Item("Sulfuras, Hand of Ragnaros", 10, -2)
         };
 
         GildedRose gildedRose = new GildedRose(items);
@@ -110,6 +117,7 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[3].quality, is(-1));
         assertThat(gildedRose.items[4].quality, is(80));
         assertThat(gildedRose.items[5].quality, is(80));
+        assertThat(gildedRose.items[6].quality, is(-2));
     }
 
     @Test
@@ -123,6 +131,9 @@ public class GildedRoseTest {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 3, 40),
                 new Item("Backstage passes to a TAFKAL80ETC concert", -1, -2),
                 new Item("Backstage passes to a TAFKAL80ETC concert", -1, 2),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 11, -1),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 10, -1),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 13, -1),
         };
 
         GildedRose gildedRose = new GildedRose(items);
@@ -136,6 +147,9 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[5].quality, is(43));
         assertThat(gildedRose.items[6].quality, is(0));
         assertThat(gildedRose.items[7].quality, is(0));
+        assertThat(gildedRose.items[8].quality, is(0));
+        assertThat(gildedRose.items[9].quality, is(1));
+        assertThat(gildedRose.items[10].quality, is(0));
     }
 
     @Test
@@ -144,7 +158,8 @@ public class GildedRoseTest {
                 new Item("Conjured Mana Cake", 10, 20),
                 new Item("Conjured Mana Cake", -2, 20),
                 new Item("Conjured Mana Cake", -2, 60),
-                new Item("Conjured Mana Cake", -2, -1)
+                new Item("Conjured Mana Cake", -2, -1),
+                new Item("Conjured Mana Cake", 10, -2)
         };
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.update_quality();
@@ -153,5 +168,6 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[1].quality, is(18));
         assertThat(gildedRose.items[2].quality, is(58));
         assertThat(gildedRose.items[3].quality, is(-1));
+        assertThat(gildedRose.items[4].quality, is(-2));
     }
 }
