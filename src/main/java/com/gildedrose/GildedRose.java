@@ -14,34 +14,45 @@ class GildedRose {
       if (needUpdateQuality(item)) {
         switch (item.name) {
           case "Aged Brie":
-            if (item.quality < 50) {
+            if (lessThanMax(item)) {
               item.quality += 1;
             }
-            if (item.sell_in < 0 && item.quality < 50) {
+            if (item.sell_in < 0 && lessThanMax(item)) {
               item.quality += 1;
             }
             break;
           case "Backstage passes to a TAFKAL80ETC concert":
-            if (item.quality < 50)
+            if (lessThanMax(item)){
               item.quality += 1;
-            if (item.sell_in < 11 && item.quality< 50)
+            }
+            if (item.sell_in < 11 && lessThanMax(item)){
               item.quality += 1;
-            if (item.sell_in < 6 && item.quality < 50)
+            }
+            if (item.sell_in < 6 && lessThanMax(item)){
               item.quality += 1;
+            }
             if (item.sell_in < 0) {
               item.quality = 0;
             }
             break;
           default:
-            if (item.quality > 0) {
+            if (greaterThanMin(item)) {
               item.quality -= 1;
             }
-            if (item.sell_in < 0 && item.quality > 0) {
+            if (item.sell_in < 0 && greaterThanMin(item)) {
               item.quality -= 1;
             }
         }
       }
     });
+  }
+
+  private boolean greaterThanMin(Item item) {
+    return item.quality > 0;
+  }
+
+  private boolean lessThanMax(Item item) {
+    return item.quality < 50;
   }
 
   private boolean needUpdateQuality(Item item) {
