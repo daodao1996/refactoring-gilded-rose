@@ -1,18 +1,18 @@
 package com.gildedrose;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 class GildedRose {
-  Item[] items;
+  List<Item> items;
 
-  public GildedRose(Item[] items) {
+  public GildedRose(List<Item> items) {
     this.items = items;
   }
 
   public void update_quality() {
-    Stream<Item> itemsStream = Arrays.stream(items);
-    itemsStream.forEach(item -> {
+    items.forEach(item -> {
       if (needUpdateQuality(item)) {
         switch (item.name) {
           case "Aged Brie":
@@ -51,8 +51,7 @@ class GildedRose {
   }
 
   public void update_sellIn() {
-    Stream<Item> itemsStream = Arrays.stream(items);
-    itemsStream.forEach(item -> {
+    items.forEach(item -> {
       if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
         item.sell_in = item.sell_in - 1;
       }
