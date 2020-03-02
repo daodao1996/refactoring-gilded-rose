@@ -1,8 +1,6 @@
 package com.gildedrose;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 class GildedRose {
   List<Item> items;
