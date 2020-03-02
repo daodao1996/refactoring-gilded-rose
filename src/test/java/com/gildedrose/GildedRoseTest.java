@@ -84,7 +84,8 @@ public class GildedRoseTest {
                 new Item("Elixir of the Mongoose", -2, 20),
                 new Item("Elixir of the Mongoose", -2, 60),
                 new Item("Elixir of the Mongoose", -2, -1),
-                new Item("Elixir of the Mongoose", 10, -1)
+                new Item("Elixir of the Mongoose", 10, -1),
+                new Item("Elixir of the Mongoose", -1, 1)
         };
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.update_quality();
@@ -94,6 +95,7 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[2].quality, is(58));
         assertThat(gildedRose.items[3].quality, is(-1));
         assertThat(gildedRose.items[4].quality, is(-1));
+        assertThat(gildedRose.items[5].quality, is(0));
     }
 
     @Test
@@ -126,14 +128,16 @@ public class GildedRoseTest {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 20, 40),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 20, 60),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 9, 60),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 9, 40),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 9, 49),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 3, 60),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 3, 40),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 3, 48),
                 new Item("Backstage passes to a TAFKAL80ETC concert", -1, -2),
                 new Item("Backstage passes to a TAFKAL80ETC concert", -1, 2),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 11, -1),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 10, -1),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 13, -1),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 9, 48),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 3, 47),
         };
 
         GildedRose gildedRose = new GildedRose(items);
@@ -142,14 +146,16 @@ public class GildedRoseTest {
         assertThat(gildedRose.items[0].quality, is(41));
         assertThat(gildedRose.items[1].quality, is(60));
         assertThat(gildedRose.items[2].quality, is(60));
-        assertThat(gildedRose.items[3].quality, is(42));
+        assertThat(gildedRose.items[3].quality, is(50));
         assertThat(gildedRose.items[4].quality, is(60));
-        assertThat(gildedRose.items[5].quality, is(43));
+        assertThat(gildedRose.items[5].quality, is(50));
         assertThat(gildedRose.items[6].quality, is(0));
         assertThat(gildedRose.items[7].quality, is(0));
         assertThat(gildedRose.items[8].quality, is(0));
         assertThat(gildedRose.items[9].quality, is(1));
         assertThat(gildedRose.items[10].quality, is(0));
+        assertThat(gildedRose.items[11].quality, is(50));
+        assertThat(gildedRose.items[12].quality, is(50));
     }
 
     @Test
