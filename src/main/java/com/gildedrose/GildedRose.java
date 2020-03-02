@@ -1,10 +1,12 @@
 package com.gildedrose;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 class GildedRose {
   Item[] items;
+  List<String> reduceQuality = Arrays.asList("+5 Dexterity Vest", "Elixir of the Mongoose", "Conjured Mana Cake");
 
   public GildedRose(Item[] items) {
     this.items = items;
@@ -14,45 +16,35 @@ class GildedRose {
     Stream<Item> itemsStream = Arrays.stream(items);
     itemsStream.forEach(item -> {
       if (needUpdateQuality(item)) {
-        if (!item.name.equals("Aged Brie")
-                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-          if (item.quality > 0) {
-            item.quality = item.quality - 1;
-          }
-        } else {
-          if (item.quality < 50) {
-            item.quality = item.quality + 1;
-
-            if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-              if (item.sell_in < 11) {
-                if (item.quality < 50) {
-                  item.quality = item.quality + 1;
-                }
-              }
-
-              if (item.sell_in < 6) {
-                if (item.quality < 50) {
-                  item.quality = item.quality + 1;
-                }
-              }
+        switch (item.name){
+          case "Aged Brie":
+            if(item.quality < 50){
+              item.quality += 1;
             }
-          }
-        }
-
-        if (item.sell_in < 0) {
-          if (!item.name.equals("Aged Brie")) {
-            if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-              if (item.quality > 0) {
-                item.quality = item.quality - 1;
-              }
-            } else {
-              item.quality = item.quality - item.quality;
+            if(item.sell_in < 0 && item.quality < 50){
+              item.quality += 1;
             }
-          } else {
-            if (item.quality < 50) {
-              item.quality = item.quality + 1;
+            break;
+          case "Backstage passes to a TAFKAL80ETC concert":
+            if(item.quality < 50){
+              if(item.sell_in >= 11)
+                item.quality += 1;
+              if(item.sell_in >= 6 && item.sell_in < 11)
+                item.quality += 2;
+              if(item.sell_in < 6)
+                item.quality += 3;
             }
-          }
+            if(item.sell_in < 0){
+              item.quality = 0;
+            }
+            break;
+          default:
+            if(item.quality > 0){
+              item.quality -= 1;
+            }
+            if(item.sell_in < 0 && item.quality > 0){
+              item.quality -= 1;
+            }
         }
       }
     });
