@@ -12,13 +12,13 @@ public class Backstage extends Item {
     if (quality < 50) {
       quality = quality + 1;
 
-      if (sell_in < 11) {
+      if (sellIn < 11) {
         if (quality < 50) {
           quality = quality + 1;
         }
       }
 
-      if (sell_in < 6) {
+      if (sellIn < 6) {
         if (quality < 50) {
           quality = quality + 1;
         }
