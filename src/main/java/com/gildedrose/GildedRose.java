@@ -10,7 +10,7 @@ class GildedRose {
     }
 
     public void update_quality() {
-        items.forEach(Item::udpateItemQuality);
+        items.forEach(Item::updateQualityAndSellIn);
     }
 
 }

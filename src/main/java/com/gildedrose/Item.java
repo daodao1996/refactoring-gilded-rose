@@ -19,7 +19,7 @@ public class Item {
     return this.name + ", " + this.sell_in + ", " + this.quality;
   }
 
-  void udpateItemQuality() {
+  void updateQualityAndSellIn() {
     updateQuality();
 
     updateSellIn();
