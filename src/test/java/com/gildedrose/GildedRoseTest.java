@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GildedRoseTest {
+    ItemFactory factory = new ItemFactory();
 
     @Test
     public void foo() {
@@ -27,12 +28,12 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Aged_Brie() {
     List<Item> items = Arrays.asList(
-            new AgedBire(2, 0),
-            new AgedBire(3, 30),
-            new AgedBire(-1, 30),
-            new AgedBire(-1, 60),
-            new AgedBire(-1, -2),
-            new AgedBire(2, -2)
+            factory.getItem("Aged Brie",2, 0),
+            factory.getItem("Aged Brie",3, 30),
+            factory.getItem("Aged Brie",-1, 30),
+            factory.getItem("Aged Brie",-1, 60),
+            factory.getItem("Aged Brie",-1, -2),
+            factory.getItem("Aged Brie",2, -2)
     );
     GildedRose gildedRose = new GildedRose(items);
     gildedRose.update_quality();
@@ -44,11 +45,11 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_5_Dexterity_Vest() {
     List<Item> items = Arrays.asList(
-            new Item("+5 Dexterity Vest", 10, 20),
-            new Item("+5 Dexterity Vest", -2, 20),
-            new Item("+5 Dexterity Vest", -2, 60),
-            new Item("+5 Dexterity Vest", -2, -1),
-            new Item("+5 Dexterity Vest", 10, -1)
+            factory.getItem("+5 Dexterity Vest", 10, 20),
+            factory.getItem("+5 Dexterity Vest", -2, 20),
+            factory.getItem("+5 Dexterity Vest", -2, 60),
+            factory.getItem("+5 Dexterity Vest", -2, -1),
+            factory.getItem("+5 Dexterity Vest", 10, -1)
     );
     GildedRose gildedRose = new GildedRose(items);
     gildedRose.update_quality();
@@ -60,12 +61,12 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Elixir_of_the_Mongoose() {
     List<Item> items = Arrays.asList(
-            new Item("Elixir of the Mongoose", 10, 20),
-            new Item("Elixir of the Mongoose", -2, 20),
-            new Item("Elixir of the Mongoose", -2, 60),
-            new Item("Elixir of the Mongoose", -2, -1),
-            new Item("Elixir of the Mongoose", 10, -1),
-            new Item("Elixir of the Mongoose", -1, 1)
+            factory.getItem("Elixir of the Mongoose", 10, 20),
+            factory.getItem("Elixir of the Mongoose", -2, 20),
+            factory.getItem("Elixir of the Mongoose", -2, 60),
+            factory.getItem("Elixir of the Mongoose", -2, -1),
+            factory.getItem("Elixir of the Mongoose", 10, -1),
+            factory.getItem("Elixir of the Mongoose", -1, 1)
     );
     GildedRose gildedRose = new GildedRose(items);
     gildedRose.update_quality();
@@ -77,13 +78,13 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Sulfuras_Hand_of_Ragnaros() {
     List<Item> items = Arrays.asList(
-            new Sulfuras(10, 20),
-            new Sulfuras(-2, 20),
-            new Sulfuras(-2, 60),
-            new Sulfuras(-2, -1),
-            new Sulfuras(0, 80),
-            new Sulfuras(-1, 80),
-            new Sulfuras(10, -2)
+            factory.getItem("Sulfuras, Hand of Ragnaros", 10, 20),
+            factory.getItem("Sulfuras, Hand of Ragnaros", -2, 20),
+            factory.getItem("Sulfuras, Hand of Ragnaros", -2, 60),
+            factory.getItem("Sulfuras, Hand of Ragnaros", -2, -1),
+            factory.getItem("Sulfuras, Hand of Ragnaros", 0, 80),
+            factory.getItem("Sulfuras, Hand of Ragnaros", -1, 80),
+            factory.getItem("Sulfuras, Hand of Ragnaros", 10, -2)
     );
 
     GildedRose gildedRose = new GildedRose(items);
@@ -96,19 +97,19 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Backstage_passes_to_a_TAFKAL80ETC_concert() {
     List<Item> items = Arrays.asList(
-            new Backstage(20, 40),
-            new Backstage(20, 60),
-            new Backstage(9, 60),
-            new Backstage(9, 49),
-            new Backstage(3, 60),
-            new Backstage(3, 48),
-            new Backstage(-1, -2),
-            new Backstage(-1, 2),
-            new Backstage(11, -1),
-            new Backstage(10, -1),
-            new Backstage(13, -1),
-            new Backstage(9, 48),
-            new Backstage(3, 47)
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 20, 40),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 20, 60),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 9, 60),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 9, 49),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 3, 60),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 3, 48),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", -1, -2),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", -1, 2),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 11, -1),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 10, -1),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 13, -1),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 9, 48),
+            factory.getItem("Backstage passes to a TAFKAL80ETC concert", 3, 47)
     );
 
     GildedRose gildedRose = new GildedRose(items);
@@ -121,11 +122,11 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Conjured_Mana_Cake() {
     List<Item> items = Arrays.asList(
-            new Item("Conjured Mana Cake", 10, 20),
-            new Item("Conjured Mana Cake", -2, 20),
-            new Item("Conjured Mana Cake", -2, 60),
-            new Item("Conjured Mana Cake", -2, -1),
-            new Item("Conjured Mana Cake", 10, -2)
+            factory.getItem("Conjured Mana Cake", 10, 20),
+            factory.getItem("Conjured Mana Cake", -2, 20),
+            factory.getItem("Conjured Mana Cake", -2, 60),
+            factory.getItem("Conjured Mana Cake", -2, -1),
+            factory.getItem("Conjured Mana Cake", 10, -2)
     );
     GildedRose gildedRose = new GildedRose(items);
     gildedRose.update_quality();
