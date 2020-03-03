@@ -30,12 +30,8 @@ public class Item {
   }
 
   protected void updateQualityAfterExpire() {
-    if (!isBackstage()) {
-      if (quality > 0) {
-        quality = quality - 1;
-      }
-    } else {
-      quality = 0;
+    if (quality > 0) {
+      quality = quality - 1;
     }
   }
 
@@ -48,28 +44,8 @@ public class Item {
   }
 
   protected void updateQuality() {
-    if (isBackstage()) {
-      if (quality < 50) {
-        quality = quality + 1;
-
-        if (isBackstage()) {
-          if (sell_in < 11) {
-            if (quality < 50) {
-              quality = quality + 1;
-            }
-          }
-
-          if (sell_in < 6) {
-            if (quality < 50) {
-              quality = quality + 1;
-            }
-          }
-        }
-      }
-    } else {
-      if (quality > 0) {
-        quality = quality - 1;
-      }
+    if (quality > 0) {
+      quality = quality - 1;
     }
   }
 

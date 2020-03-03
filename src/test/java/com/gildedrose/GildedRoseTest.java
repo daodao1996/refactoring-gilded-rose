@@ -4,6 +4,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 import com.gildedrose.items.AgedBire;
+import com.gildedrose.items.Backstage;
 import com.gildedrose.items.Sulfuras;
 import org.junit.Test;
 
@@ -95,19 +96,19 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Backstage_passes_to_a_TAFKAL80ETC_concert() {
     List<Item> items = Arrays.asList(
-            new Item("Backstage passes to a TAFKAL80ETC concert", 20, 40),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 20, 60),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 9, 60),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 9, 49),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 3, 60),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 3, 48),
-            new Item("Backstage passes to a TAFKAL80ETC concert", -1, -2),
-            new Item("Backstage passes to a TAFKAL80ETC concert", -1, 2),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 11, -1),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 10, -1),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 13, -1),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 9, 48),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 3, 47)
+            new Backstage(20, 40),
+            new Backstage(20, 60),
+            new Backstage(9, 60),
+            new Backstage(9, 49),
+            new Backstage(3, 60),
+            new Backstage(3, 48),
+            new Backstage(-1, -2),
+            new Backstage(-1, 2),
+            new Backstage(11, -1),
+            new Backstage(10, -1),
+            new Backstage(13, -1),
+            new Backstage(9, 48),
+            new Backstage(3, 47)
     );
 
     GildedRose gildedRose = new GildedRose(items);
