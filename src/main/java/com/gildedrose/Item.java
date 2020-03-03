@@ -48,16 +48,4 @@ public class Item {
       quality = quality - 1;
     }
   }
-
-  private boolean isSulfuras() {
-    return name.equals("Sulfuras, Hand of Ragnaros");
-  }
-
-  private boolean isBackstage() {
-    return name.equals("Backstage passes to a TAFKAL80ETC concert");
-  }
-
-  protected boolean isAgedBrie() {
-    return false;
-  }
 }
