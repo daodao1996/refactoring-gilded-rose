@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import com.gildedrose.items.AgedBire;
+import com.gildedrose.items.Sulfuras;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -21,8 +22,8 @@ public class TexttestFixture {
                 new Item("+5 Dexterity Vest", 10, 20), //
                 new AgedBire(2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
+                new Sulfuras( 0, 80), //
+                new Sulfuras( -1, 80),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),

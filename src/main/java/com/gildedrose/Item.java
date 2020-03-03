@@ -32,9 +32,7 @@ public class Item {
   protected void updateQualityAfterExpire() {
     if (!isBackstage()) {
       if (quality > 0) {
-        if (!isSulfuras()) {
-          quality = quality - 1;
-        }
+        quality = quality - 1;
       }
     } else {
       quality = 0;
@@ -45,10 +43,8 @@ public class Item {
     return sell_in < 0;
   }
 
-  private void updateSellIn() {
-    if (!isSulfuras()) {
-      sell_in = sell_in - 1;
-    }
+  protected void updateSellIn() {
+    sell_in = sell_in - 1;
   }
 
   protected void updateQuality() {
@@ -72,9 +68,7 @@ public class Item {
       }
     } else {
       if (quality > 0) {
-        if (!isSulfuras()) {
-          quality = quality - 1;
-        }
+        quality = quality - 1;
       }
     }
   }

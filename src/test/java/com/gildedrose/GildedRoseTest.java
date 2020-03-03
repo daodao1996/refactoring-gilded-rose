@@ -4,6 +4,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 import com.gildedrose.items.AgedBire;
+import com.gildedrose.items.Sulfuras;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -75,13 +76,13 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Sulfuras_Hand_of_Ragnaros() {
     List<Item> items = Arrays.asList(
-            new Item("Sulfuras, Hand of Ragnaros", 10, 20),
-            new Item("Sulfuras, Hand of Ragnaros", -2, 20),
-            new Item("Sulfuras, Hand of Ragnaros", -2, 60),
-            new Item("Sulfuras, Hand of Ragnaros", -2, -1),
-            new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-            new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-            new Item("Sulfuras, Hand of Ragnaros", 10, -2)
+            new Sulfuras(10, 20),
+            new Sulfuras(-2, 20),
+            new Sulfuras(-2, 60),
+            new Sulfuras(-2, -1),
+            new Sulfuras(0, 80),
+            new Sulfuras(-1, 80),
+            new Sulfuras(10, -2)
     );
 
     GildedRose gildedRose = new GildedRose(items);
