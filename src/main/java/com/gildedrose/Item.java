@@ -29,21 +29,15 @@ public class Item {
     }
   }
 
-  private void updateQualityAfterExpire() {
-    if (!isAgedBrie()) {
-      if (!isBackstage()) {
-        if (quality > 0) {
-          if (!isSulfuras()) {
-            quality = quality - 1;
-          }
+  protected void updateQualityAfterExpire() {
+    if (!isBackstage()) {
+      if (quality > 0) {
+        if (!isSulfuras()) {
+          quality = quality - 1;
         }
-      } else {
-        quality = 0;
       }
     } else {
-      if (quality < 50) {
-        quality = quality + 1;
-      }
+      quality = 0;
     }
   }
 
@@ -57,15 +51,8 @@ public class Item {
     }
   }
 
-  private void updateQuality() {
-    if (!isAgedBrie()
-            && !isBackstage()) {
-      if (quality > 0) {
-        if (!isSulfuras()) {
-          quality = quality - 1;
-        }
-      }
-    } else {
+  protected void updateQuality() {
+    if (isBackstage()) {
       if (quality < 50) {
         quality = quality + 1;
 
@@ -81,6 +68,12 @@ public class Item {
               quality = quality + 1;
             }
           }
+        }
+      }
+    } else {
+      if (quality > 0) {
+        if (!isSulfuras()) {
+          quality = quality - 1;
         }
       }
     }
