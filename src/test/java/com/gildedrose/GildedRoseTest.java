@@ -3,6 +3,7 @@ package com.gildedrose;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+import com.gildedrose.items.AgedBire;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -24,12 +25,12 @@ public class GildedRoseTest {
   @Test
   public void when_name_is_Aged_Brie() {
     List<Item> items = Arrays.asList(
-            new Item("Aged Brie", 2, 0),
-            new Item("Aged Brie", 3, 30),
-            new Item("Aged Brie", -1, 30),
-            new Item("Aged Brie", -1, 60),
-            new Item("Aged Brie", -1, -2),
-            new Item("Aged Brie", 2, -2)
+            new AgedBire(2, 0),
+            new AgedBire(3, 30),
+            new AgedBire(-1, 30),
+            new AgedBire(-1, 60),
+            new AgedBire(-1, -2),
+            new AgedBire(2, -2)
     );
     GildedRose gildedRose = new GildedRose(items);
     gildedRose.update_quality();
